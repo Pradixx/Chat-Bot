@@ -18,6 +18,14 @@ public class ApplicationChat {
         
         int Resposta4 = PegarRespostaSolicitação(ler);
         IdentificadorSolicitação(Resposta4, ler);
+
+        //QueroSolicitarBilhetePerguntas
+
+        //PrazoBilhetePerguntas
+
+        int Resposta5 = PegarRespostaRenovação(ler);
+        IdentificadorRenovação(Resposta5, ler);
+
         ler.close();
     }
     private static void MensagemDeIntrodução() {
@@ -29,8 +37,9 @@ public class ApplicationChat {
     private static String PegarUsuário(Scanner ler) {
         return ler.nextLine();
     }
+
     private static void MensagensIniciais(String usuário) {
-        System.out.println("Olá " + usuário + ", você pode escolher uma opção abaixo:");
+        System.out.println("\nOlá " + usuário + ", você pode escolher uma opção abaixo:");
         System.out.println("Dúvida sobre a secretaria [1]");
         System.out.println("Dúvida sobre sua turma [2]");
         System.out.println("Dúvida sobre o curso [3]");
@@ -83,7 +92,7 @@ public class ApplicationChat {
 }
 
     private static void BilhetePerguntas(Scanner ler) {
-        System.out.println("Solicitação [1]");
+        System.out.println("\nSolicitação [1]");
         System.out.println("Renovação [2]");
         System.out.println("Cancelamento [3]");
     }
@@ -109,7 +118,7 @@ public class ApplicationChat {
 }
 
     private static void SolicitaçãoPerguntas(Scanner ler) {
-        System.out.println("Quero solicitar um bilhete [1]");
+        System.out.println("\nQuero solicitar um bilhete [1]");
         System.out.println("Prazo de reposta da solicitação [2]");
     }
     private static int PegarRespostaSolicitação(Scanner ler) {
@@ -119,7 +128,7 @@ public class ApplicationChat {
     private static void IdentificadorSolicitação(int Resposta4, Scanner ler) {
         switch (Resposta4) {
             case 1:
-                SolicitarBilhetePerguntas(ler);
+                QueroSolicitarBilheteFinal(ler);
                 break;
             case 2:
                 PrazoBilhetePerguntas(ler);
@@ -129,16 +138,35 @@ public class ApplicationChat {
                 break;
         }
 }
+    private static void QueroSolicitarBilheteFinal(Scanner ler) {
+    // Implement this method
+    }
 
-    private static void SolicitarBilhetePerguntas(Scanner ler) {
-    // Implement this method
-    }
     private static void PrazoBilhetePerguntas(Scanner ler) {
-    // Implement this method
+        System.out.println("\nQual o Prazo de resposta da Solicitação [1]");
     }
+
     private static void RenovaçãoPerguntas(Scanner ler) {
-    // Implement this method
+        System.out.println("\nNão consigo fazer a renovação do bilhete. O que faço? [1]");
     }
+    private static int PegarRespostaRenovação(Scanner ler) {
+        System.out.println("\nDigite o número da sua pergunta:");
+        return ler.nextInt();
+    }
+    private static void IdentificadorRenovação(int Resposta5, Scanner ler) {
+        switch (Resposta5) {
+            case 1:
+                RespostaFinalRenovação(ler);
+                break;
+            default:
+                System.out.println("Número inválido.");
+                break;
+        }
+    }
+    private static void RespostaFinalRenovação(Scanner ler) {
+        // Implement this method
+        }
+
     private static void CancelamentoPerguntas(Scanner ler) {
     // Implement this method
     }
