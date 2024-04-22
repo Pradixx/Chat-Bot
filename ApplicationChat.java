@@ -5,10 +5,10 @@ public class ApplicationChat {
         MensagemDeIntrodução();
         
         String usuário = PegarUsuário(ler);
-        MensagensIniciais(usuário);
+        PerguntasIniciais(usuário);
 
-        int Resposta1 = PegarResposta(ler);
-        IdentificadorResposta(Resposta1, ler);
+        int Resposta1 = PegarResposta1(ler);
+        IdentificadorResposta1(Resposta1, ler);
 
         int Resposta2 = PegarRespostaSecretaria(ler);
         IdentificadorSecretaria(Resposta2, ler);
@@ -21,10 +21,11 @@ public class ApplicationChat {
 
         //QueroSolicitarBilhetePerguntas
 
-        //PrazoBilhetePerguntas
+        int Resposta6 = PegarRespostaPrazoBilheteFinal(ler);
+        IdentificadorPrazoBilheteFinal(Resposta6, ler);
 
-        int Resposta5 = PegarRespostaRenovação(ler);
-        IdentificadorRenovação(Resposta5, ler);
+        int Resposta7 = PegarRespostaRenovação(ler);
+        IdentificadorRenovação(Resposta7, ler);
 
         ler.close();
     }
@@ -38,17 +39,19 @@ public class ApplicationChat {
         return ler.nextLine();
     }
 
-    private static void MensagensIniciais(String usuário) {
+//------------------------------------------------------------------------------------------------------------------------
+
+    private static void PerguntasIniciais(String usuário) {
         System.out.println("\nOlá " + usuário + ", você pode escolher uma opção abaixo:");
         System.out.println("Dúvida sobre a secretaria [1]");
         System.out.println("Dúvida sobre sua turma [2]");
         System.out.println("Dúvida sobre o curso [3]");
     }
-    private static int PegarResposta(Scanner ler) {
+    private static int PegarResposta1(Scanner ler) {
         System.out.println("\nDigite o número da sua pergunta:");
         return ler.nextInt();
     }
-    private static void IdentificadorResposta(int Resposta1, Scanner ler) {
+    private static void IdentificadorResposta1(int Resposta1, Scanner ler) {
         switch (Resposta1) {
             case 1:
                 SecretariaPerguntas(ler);
@@ -64,6 +67,8 @@ public class ApplicationChat {
                 break;
         }
     }
+
+//------------------------------------------------------------------------------------------------------------------------
 
     private static void SecretariaPerguntas(Scanner ler) {
         System.out.println("\nBilhete [1]");
@@ -91,6 +96,8 @@ public class ApplicationChat {
         }
 }
 
+//------------------------------------------------------------------------------------------------------------------------
+
     private static void BilhetePerguntas(Scanner ler) {
         System.out.println("\nSolicitação [1]");
         System.out.println("Renovação [2]");
@@ -117,6 +124,8 @@ public class ApplicationChat {
         }
 }
 
+//------------------------------------------------------------------------------------------------------------------------
+
     private static void SolicitaçãoPerguntas(Scanner ler) {
         System.out.println("\nQuero solicitar um bilhete [1]");
         System.out.println("Prazo de reposta da solicitação [2]");
@@ -142,9 +151,29 @@ public class ApplicationChat {
     // Implement this method
     }
 
+//------------------------------------------------------------------------------------------------------------------------
+
     private static void PrazoBilhetePerguntas(Scanner ler) {
         System.out.println("\nQual o Prazo de resposta da Solicitação [1]");
     }
+    private static int PegarRespostaPrazoBilheteFinal(Scanner ler) {
+        System.out.println("\nDigite o número da sua pergunta:");
+        return ler.nextInt();
+    }
+    private static void IdentificadorPrazoBilheteFinal(int Resposta6, Scanner ler) {
+        switch (Resposta6) {
+            case 1:
+                RespostaFinalPrazoBilhete(ler);
+                break;
+            default:
+                System.out.println("Número inválido.");
+                break;
+        }
+    }
+    private static void RespostaFinalPrazoBilhete(Scanner ler) {
+        // Implement this method
+        }
+//------------------------------------------------------------------------------------------------------------------------
 
     private static void RenovaçãoPerguntas(Scanner ler) {
         System.out.println("\nNão consigo fazer a renovação do bilhete. O que faço? [1]");
@@ -153,8 +182,8 @@ public class ApplicationChat {
         System.out.println("\nDigite o número da sua pergunta:");
         return ler.nextInt();
     }
-    private static void IdentificadorRenovação(int Resposta5, Scanner ler) {
-        switch (Resposta5) {
+    private static void IdentificadorRenovação(int Resposta7, Scanner ler) {
+        switch (Resposta7) {
             case 1:
                 RespostaFinalRenovação(ler);
                 break;
@@ -166,6 +195,8 @@ public class ApplicationChat {
     private static void RespostaFinalRenovação(Scanner ler) {
         // Implement this method
         }
+
+//------------------------------------------------------------------------------------------------------------------------
 
     private static void CancelamentoPerguntas(Scanner ler) {
     // Implement this method
