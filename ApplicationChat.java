@@ -27,7 +27,13 @@ public class ApplicationChat {
         int Resposta7 = PegarRespostaRenovação(ler);
         IdentificadorRenovação(Resposta7, ler);
 
+        int Resposta8 = PegarRespostaCancelamento(ler);
+        IdentificadorCancelamento(Resposta8, ler);
+
         ler.close();
+
+    //----------------------------------------------------------------------------------------------------------------------
+        
     }
     private static void MensagemDeIntrodução() {
         System.out.println("Bem vindo ao Chat-Bot.");
@@ -199,8 +205,27 @@ public class ApplicationChat {
 //------------------------------------------------------------------------------------------------------------------------
 
     private static void CancelamentoPerguntas(Scanner ler) {
-    // Implement this method
+        System.out.println("\nComo faço o cancelamento do meu bilhete [1]");
     }
+    private static int PegarRespostaCancelamento(Scanner ler) {
+        System.out.println("\nDigite o número da sua pergunta:");
+        return ler.nextInt();
+    }
+    private static void IdentificadorRenovação(int Resposta8, Scanner ler) {
+        switch (Resposta8) {
+            case 1:
+                RespostaFinalCancelamento(ler);
+                break;
+            default:
+                System.out.println("Número inválido.");
+                break;
+        }
+    private static void RespostaFinalCancelamento(Scanner ler) {
+        // Implement this method
+        }
+        
+//------------------------------------------------------------------------------------------------------------------------
+    
     private static void DadosPerguntas(Scanner ler) {
         // Implement this method
     }
